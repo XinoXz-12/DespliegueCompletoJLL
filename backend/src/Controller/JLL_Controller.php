@@ -16,7 +16,7 @@ class JLL_Controller extends AbstractController
         $this->connection = $connection;
     }
 
-    #[Route('/api/ini', name: 'get_ini')]
+    #[Route('/api/db', name: 'get_db')]
     public function index(): JsonResponse
     {
         // Consulta para recuperar el primer mensaje de la tabla "secretosIN"
@@ -25,7 +25,7 @@ class JLL_Controller extends AbstractController
 
         // Si no hay mensaje en la BD, devolver un mensaje de error
         if (!$result) {
-            return $this->json(['message' => 'No secretos found in the database!']);
+            return $this->json(['message' => 'No messages found in the database!']);
         } else {
             $result = 'JLL Operativo, respuesta de la BD: ' . $result;
             return $this->json(['message' => $result]);
