@@ -16,7 +16,7 @@ class JLL_Controller extends AbstractController
         $this->connection = $connection;
     }
 
-    #[Route('/api/db', name: 'get_db')]
+    #[Route('/api/jll', name: 'get_jll')]
     public function index(): JsonResponse
     {
         // Consulta para recuperar el primer mensaje de la tabla "secretosIN"
